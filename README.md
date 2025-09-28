@@ -1,5 +1,10 @@
 # <img src="logo.png" style="max-height:100px" /> AhoyCaptain
 
+## THANKS joshmn!
+
+This gem was originally created by [joshmn](https://github.com/joshmn).
+All credits to the original owner.
+All changes made to the gem have the goal to fix bugs and improve features.
 
 A full-featured, mountable analytics dashboard for your Rails app, shamelessly inspired by Plausible Analytics, powered by the Ahoy gem.
 

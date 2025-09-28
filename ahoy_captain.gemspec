@@ -3,13 +3,13 @@ require_relative "lib/ahoy_captain/version"
 Gem::Specification.new do |spec|
   spec.name        = "ahoy_captain"
   spec.version     = AhoyCaptain::VERSION
-  spec.authors     = ["joshmn"]
+  spec.authors     = ["joshmn", "patrickemuller"]
   spec.homepage    = spec.metadata["homepage_uri"]
   spec.summary     = "A full-featured, mountable analytics dashboard for your Rails app, powered by Ahoy."
   spec.description = spec.summary
   spec.license     = "MIT"
 
-  spec.metadata["homepage_uri"] = "https://github.com/joshmn/ahoy_captain"
+  spec.metadata["homepage_uri"] = "https://github.com/patrickemuller/ahoy_captain"
   spec.metadata["source_code_uri"] = spec.metadata["homepage_uri"]
   spec.metadata["changelog_uri"] = spec.metadata["homepage_uri"]
 
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ransack", ">= 2.3"
   spec.add_dependency "turbo-rails", ">= 1.2"
   spec.add_dependency "view_component", ">= 3"
-  spec.add_dependency "importmap-rails", ">= 1"
+  spec.add_dependency "importmap-rails", ">= 2"
   spec.add_dependency "stimulus-rails", ">= 1.1"
   spec.add_dependency "ahoy_matey", ">= 1.1"
   spec.add_dependency "chartkick", ">= 4"

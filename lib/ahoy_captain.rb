@@ -1,3 +1,4 @@
+require "ostruct"
 require "ahoy_captain/version"
 require "ahoy_captain/railtie"
 require "ahoy_captain/engine"
@@ -55,7 +56,7 @@ module AhoyCaptain
     end
 
     def none
-      @none ||= OpenStruct.new(text: "(none)", value: "!none!")
+      @none ||= ::OpenStruct.new(text: "(none)", value: "!none!")
     end
   end
 end

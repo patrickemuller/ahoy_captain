@@ -4,6 +4,11 @@
 
 Nothing, yet. 
 
+## Version 1.2.0 (Sep 27, 2023)
+
+* Fix issues with javascript_inline_importmap_tag
+* Fix issues with OpenStruct
+
 ## Version 1.1.0 (Oct 16, 2023)
 
 ### Fixed
