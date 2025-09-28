@@ -8,10 +8,12 @@ All changes made to the gem have the goal to fix bugs and improve features.
 
 A full-featured, mountable analytics dashboard for your Rails app, shamelessly inspired by Plausible Analytics, powered by the Ahoy gem.
 
-<a href="https://github.com/joshmn/ahoy_captain/blob/main/ss.jpg"><img src="ss.jpg" style="max-width:300px" /></a>
-## Notice
+<a href="https://github.com/patrickemuller/ahoy_captain/blob/main/ss.jpg"><img src="ss.jpg" style="max-width:300px" /></a>
 
-Currently requires using PG and a JSONB column for your data.
+## Dependencies
+
+This dashboard is meant to work along with the [Ahoy Gem](https://github.com/ankane/ahoy).
+Any events, funnels, or campaigns should be created following the instructions from the Ahoy gem.
 
 ## Installation
 
@@ -20,7 +22,7 @@ Currently requires using PG and a JSONB column for your data.
 Drop it in:
 
 ```bash
-$ bundle add ahoy_captain
+$ bundle add ahoy_captain --github patrickemuller/ahoy_captain
 ```
 
 ### 2. Install it
@@ -43,6 +45,19 @@ AhoyCaptain.event.with_routes.count
 ```
 
 This can be fully-customized. See the initializer `config/initializers/ahoy_captain.rb` for more.
+
+### Protecting the routes
+
+There is still not a way to use basic authentication (may be implemented in the future).
+You can use the devise authentication for that. You just need to add the following to your `config/routes.rb`:
+
+```ruby
+Rails.application.routes.draw do
+  authenticate :user, ->(user) { user.admin? } do
+    mount AhoyCaptain::Engine => "/ahoy_captain"
+  end
+end
+```
 
 ### 4. Star this repo
 
@@ -72,13 +87,11 @@ If you have a large dataset (> 1GB) you probably want some indexes. `rails g aho
 * CSV exports
 * Date comparison
 
-## Coming soon ™️
-
-* Bug fixes and performance improvements
-
 ## Contributors
 
 This was built during the Rails Hackathon in July 2023 with [afogel](https://github.com/afogel) and [dnoetz](https://github.com/dnoetz).
+
+This gem was updated and had bug fixes done by [Patrick Muller](https://github.com/patrickemuller/ahoy_captain).
 
 ## Contributions
 
